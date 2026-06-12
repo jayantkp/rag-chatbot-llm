@@ -65,7 +65,7 @@ if prompt := st.chat_input('Ask me anything'):
 
     context = (None if uploaded_files == [] else DB.similarity_search(user_prompt, k = k))
 
-    answer = model.generate(user_prompt, context = context, max_new_tokens = max_new_tokens)
+    answer = model.inference(user_prompt, context = context, max_new_tokens = max_new_tokens)
 
     response = st.write(answer)
   
